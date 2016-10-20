@@ -84,9 +84,9 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Todo.mdf" />
-    <Content Include="App_Data\Todo_log.ldf">
-      <DependentUpon>Todo.mdf</DependentUpon>
+    <Content Include="App_Data\TodoDB.mdf" />
+    <Content Include="App_Data\TodoDB_log.ldf">
+      <DependentUpon>TodoDB.mdf</DependentUpon>
     </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

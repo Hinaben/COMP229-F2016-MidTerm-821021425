@@ -8,7 +8,7 @@ namespace COMP229_F2016_MidTerm_821021425.Models
     public partial class TodoContext : DbContext
     {
         public TodoContext()
-            : base("name=TodoConnection")
+            : base("name=TodoContext")
         {
         }
 
