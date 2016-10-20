@@ -68,5 +68,15 @@ namespace COMP229_F2016_MidTerm_821021425
                 Response.Redirect("~/TodoList.aspx");
             }
         }
+
+        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void CommentCheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox.Visible = true;
+        }
     }
 }

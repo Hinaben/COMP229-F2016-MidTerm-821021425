@@ -8,6 +8,7 @@ using System.Web.UI.WebControls;
 // using statements required for EF DB access
 using COMP229_F2016_MidTerm_821021425.Models;
 using System.Web.ModelBinding;
+using System.Linq.Dynamic;
 
 namespace COMP229_F2016_MidTerm_821021425
 {
@@ -74,14 +75,63 @@ namespace COMP229_F2016_MidTerm_821021425
             }
         }
 
-        protected void ToDoGridView_RowDeleting1(object sender, GridViewDeleteEventArgs e)
-        {
 
+        protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // set the new Page size
+            ToDoGridView.PageSize = Convert.ToInt32(PageSizeDropDownList.SelectedValue);
+
+            // refresh the GridView
+            this.GetTodoList();
         }
 
-        protected void ToDoGridView_RowDeleting2(object sender, GridViewDeleteEventArgs e)
+        protected void ToDoGridView_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
+            // Set the new page number
+            ToDoGridView.PageIndex = e.NewPageIndex;
 
+            // refresh the Gridview
+            this.GetTodoList();
+        }
+
+        protected void ToDoGridView_Sorting(object sender, GridViewSortEventArgs e)
+        {
+            // get the column to sort by
+            Session["SortColumn"] = e.SortExpression;
+
+            // refresh the GridView
+            this.GetTodoList();
+
+            // toggle the direction
+            Session["SortDirection"] = Session["SortDirection"].ToString() == "ASC" ? "DESC" : "ASC";
+        }
+
+        protected void ToDoGridView_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (IsPostBack)
+            {
+                if (e.Row.RowType == DataControlRowType.Header) // if header row has been clicked
+                {
+                    LinkButton linkbutton = new LinkButton();
+
+                    for (int index = 0; index < ToDoGridView.Columns.Count - 1; index++)
+                    {
+                        if (ToDoGridView.Columns[index].SortExpression == Session["SortColumn"].ToString())
+                        {
+                            if (Session["SortDirection"].ToString() == "ASC")
+                            {
+                                linkbutton.Text = " <i class='fa fa-caret-up fa-lg'></i>";
+                            }
+                            else
+                            {
+                                linkbutton.Text = " <i class='fa fa-caret-down fa-lg'></i>";
+                            }
+
+                            e.Row.Cells[index].Controls.Add(linkbutton);
+                        }
+                    }
+                }
+            }
         }
     }
 

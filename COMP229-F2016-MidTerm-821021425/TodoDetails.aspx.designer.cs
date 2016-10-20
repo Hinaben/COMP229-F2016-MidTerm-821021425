@@ -31,6 +31,24 @@ namespace COMP229_F2016_MidTerm_821021425 {
         protected global::System.Web.UI.WebControls.TextBox NotesTextBox;
         
         /// <summary>
+        /// CommentCheckBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CommentCheckBox1;
+        
+        /// <summary>
+        /// textBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBox;
+        
+        /// <summary>
         /// CancelButton control.
         /// </summary>
         /// <remarks>

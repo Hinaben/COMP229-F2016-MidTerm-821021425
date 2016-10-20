@@ -19,7 +19,10 @@
                         placeholder="Notes" required="true"></asp:TextBox>
                 </div>
 
-           
+                <div class="form-group">
+                 <asp:CheckBox ID="CommentCheckBox1" runat="server" oncheckedchanged="CommentCheckBox1_CheckedChanged" />
+                    <asp:TextBox ID="textBox" runat="server" Visible="false" name="Completed" />
+                    </div>
 
                 <div class="text-right">
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server"
