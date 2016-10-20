@@ -16,7 +16,7 @@
                     CssClass="table table-bordered table-striped table-hover" DataKeyNames="TodoID"
                     OnRowDeleting="ToDoGridView_RowDeleting">
                     <Columns>
-                        <asp:BoundField DataField="TodoName" HeaderText="To Do Name" Visible="true" />
+                        <asp:BoundField DataField="TodoDescription" HeaderText="To Do Description" Visible="true" />
                         <asp:BoundField DataField="ToDoNotes" HeaderText="To Do Notes" Visible="true" />
                         <asp:BoundField DataField="Completed" HeaderText="Completed" Visible="true" />
 
